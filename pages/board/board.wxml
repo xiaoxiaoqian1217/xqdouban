@@ -1,0 +1,36 @@
+<!--board.wxml-->
+<view class="container">
+  <view class="slider">
+    <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+    <block wx:for="{{boards[0].movies}}" wx:key="{{item.id}}">
+      <swiper-item>
+        <navigator url="../item/item?id={{item.id}}">
+          <image src="{{item.images.large}}" mode="aspectFill" />
+        </navigator>
+      </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <scroll-view class="board" scroll-y="true">
+    <block wx:for="{{boards}}" wx:key="{{item.key}}">
+      <view class="board-item">
+        <view class="title">
+          <navigator url="../list/list?type={{item.key}}&&title={{item.title}}">
+            <text>{{item.title}}</text>
+            <image src="../../example/images/arrowright.png" mode="aspectFill" />
+          </navigator>
+         </view>
+        <scroll-view class="movies" scroll-x="true"   >
+          <block wx:for="{{item.movies}}" wx:key="{{item.id}}">
+          <view id="green" class="scroll-view-item_H bc_green" class="movie">
+          <navigator url="../item/item?id={{item.id}}"  >
+          <image src="{{item.images.large}}" mode="aspectFill" />
+        </navigator>
+        </view>
+          </block>
+
+        </scroll-view>
+      </view>
+    </block>
+  </scroll-view>
+</view>

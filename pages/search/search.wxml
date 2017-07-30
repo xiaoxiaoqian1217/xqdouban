@@ -1,0 +1,9 @@
+<import src="../common/movie-list"/>
+<view class="search">
+<view class="header">
+ <view>
+     <input placeholder="输入搜索内容" auto-focus bindblur="handleSearch"/>
+  </view>
+</view>
+<template is="movie-list" data="{{movies,loading,hasMore}}"></template>
+</view>

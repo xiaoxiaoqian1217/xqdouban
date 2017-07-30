@@ -1,0 +1,33 @@
+<template name="movie-list" data="{{movies,loadind,hasMore}}">
+<view class="list">
+<scroll-view scroll-y style="height: 100%;" class="movies" bindscrolltolower="handleLoadMore">
+    <block wx:for="{{movies}}"  wx:key="{{item.id}}" >
+    <navigator url="../item/item?id={{item.id}}">
+     <view class="item">
+      <image class="poster" src="{{item.images.medium}}" mode="aspectFill"/>
+      <view class="meta">
+        <text class="title">{{item.title}}</text>
+        <text class="sub-title">{{item.original_title}}</text>
+        <view class="artists">导演：<block>{{item.directors[0].name}}</block></view>
+      </view>
+      <view class="rating">
+        <text>{{item.rating.average}}</text>
+      </view>
+    </view>
+    </navigator>
+   </block>
+    <view class="tips">
+      <view wx:if="{{ hasMore }}">
+        <image src="../../example/images/loading.gif" mode="aspectFill"/>
+        <text>玩了命的加载中...</text>
+      </view>
+      <view wx:else>
+        <text>没有更多内容了</text>
+      </view>
+    </view>
+ </scroll-view>
+<loading hidden="{{ !loading }}">加载中...</loading>
+
+</view>
+
+</template>
