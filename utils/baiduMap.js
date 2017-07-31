@@ -23,9 +23,8 @@ function getCityName(resovle,reject){
 
   //   }
   // })
-  debugger;
    return  BMap.search({
-     query:'美食',
+  
          fail: reject,
          success: resovle,
         

@@ -19,27 +19,27 @@ App({
  //注册小程序 !!!!调用接口层层回调
  onLaunch(){
    var that=this;
-      wx.switchTab({
-     url: 'pages/board/board',
-   })
-  // return baiduMap.getCityName(function(data){
-  //     console.log(data);
-  //     var address = data.originalData.results[0].address;
-  //     console.log(address);
-  //  var index=data.originalData.results[0].address.indexOf('市');
-  //  var name = address.slice(0, index)
-  //  debugger;
-  //         console.log(that);
-  // //  that.setData({ currentCity: name});为什么这个不可以用
-  //        that.data.currentCity=name;
+  //     wx.switchTab({
+  //    url: 'pages/board/board',
+  //  })
+  return baiduMap.getCityName(function(data){
+      console.log(data);
+      var address = data.originalData.results[0].address;
+      console.log(address);
+   var index=data.originalData.results[0].address.indexOf('市');
+   var name = address.slice(0, index)
+
+          console.log(that);
+  //  that.setData({ currentCity: name});为什么这个不可以用
+         that.data.currentCity=name;
  
-  //      },function(err){
-  //  console.log("err")
-  //      });
-      wechat.getLocation().then((res)=>{
-        debugger;
-        console.log(res);
-      })
+       },function(err){
+   console.log("err")
+       });
+      // wechat.getLocation().then((res)=>{
+  
+      //   console.log(res);
+      // })
   
 
  

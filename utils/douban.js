@@ -30,9 +30,6 @@ function find(type) {
   var search = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
                                                       
   var params = { start: (page - 1) * count, count: count, city: getApp().data.currentCity };
-  var ob = Object.assign(params, { q: search });
-  console.log(ob);
-
   return fetchApi(type, search ? Object.assign(params, { q: search }) : params).then(function (res) {
     return res.data;
   });

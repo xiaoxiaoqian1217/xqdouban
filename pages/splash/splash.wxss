@@ -1,0 +1,30 @@
+/* splash.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  
+}
+.splash{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.splash image{
+  width: 100%;
+  height: 100%;
+
+
+}
+.start{
+  position: absolute;
+  width: 300rpx;
+  height: 80rpx;
+  left:50%;
+ transform:translateX(-50%);
+ /* 不知道自身宽高实现水平居中的方法 */
+  bottom: 200rpx;
+  box-sizing:border-box;
+ background-color: rgba(53, 73, 94, 0.4);
+  color: #fff;
+  border: 5rpx solid #35495e;
+}
